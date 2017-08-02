@@ -1,10 +1,10 @@
 .welcome-banner.media
   %span.pull-left
     .img-responsive.logo-full.hidden-xs
-      =image_tag "white-logo.svg"
+      =image_tag "logonotype.png"
   %div.media-body
-    %h1 Welcome to Ask Away
-    %h3 Ask the parties your questions this election
+    %h1 Welcome to Any Questions
+    %h3 <em>Nau mai, haere mai</em>
     %button.btn.btn-primary.hidden-xs{"data-target" => "#HowItWorks", "data-toggle" => "modal"}
       How does it work?
 
@@ -34,6 +34,6 @@
             %p
               3. The parties will answer the most popular questions each day
       .modal-footer
-        = link_to "More about Ask Away", "/about", :class => "pull-left"
+        = link_to "More about Any Questions", "/about", :class => "pull-left"
         %button.btn.btn-primary{"data-dismiss" => "modal", type: "button"} Got it
 
