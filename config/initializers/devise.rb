@@ -5,7 +5,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'Ask Away <meg@askaway.org.nz>'
+  config.mailer_sender = 'Any Questions <noreply@anyquestions.scoop.co.nz>'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -90,7 +90,7 @@ Devise.setup do |config|
   # Limiting the stretches to just one in testing will increase the performance of
   # your test suite dramatically. However, it is STRONGLY RECOMMENDED to not use
   # a value less than 10 in other environments.
-  config.stretches = Rails.env.test? ? 1 : 10
+  config.stretches = 24
 
   # Setup a pepper to generate the encrypted password.
   # config.pepper = '6dc4e47ebe34f1f1495b15ac1e74a504de79e176e1db1e92423eb23ae6693a7e541f455335ed195cce44fa462e7d66944ae37ee0be7155ea8b5ea9da223cc5b2'
@@ -258,9 +258,5 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  if Rails.env.production?
-    config.secret_key = ENV['DEVISE_SECRET']
-  else
-    config.secret_key = 'zxcvbnmasdfghjklqwertyuiop1234567890!@#$%^&*()QWERTYUIOPASDFGHJKLZXCVBNM'
-  end
+  config.secret_key = ENV['DEVISE_SECRET']
 end
