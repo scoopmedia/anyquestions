@@ -18,7 +18,7 @@ Askaway::Application.configure do
   config.assets.css_compressor = :sass
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -72,26 +72,12 @@ Askaway::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.default_url_options = { :host => ENV['CANONICAL_HOST'] }
-  ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
-    :enable_starttls_auto => true
-  }
 
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['S3_BUCKET_NAME'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
-    },
-    :s3_host_alias => ENV['S3_BUCKET_NAME'],
-    :url => ":s3_alias_url",
-    :path => "/:class/:attachment/:id_partition/:style/:filename"
+    :url => "/konae/:id/:style/:filename",
+    :path => ":rails_root/public/konae/:id/:style/:filename"
   }
+
 end
