@@ -84,8 +84,8 @@ end
 
 # Production monitoring gems
 # (too annoying to stick into :production group, so i left them here -JL)
-gem 'raygun4ruby'
-gem 'newrelic_rpm'
+#gem 'raygun4ruby'
+#gem 'newrelic_rpm'
 
 group :production do
   gem 'unicorn'
