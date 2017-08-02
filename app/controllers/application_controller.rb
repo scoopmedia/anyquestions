@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def check_site_closed
     if Setting.site_closed?
-      flash[:alert] = 'Sorry! Posting on Ask Away has closed.'
+      flash[:alert] = 'Sorry! Posting on Any Questions has closed.'
       return redirect_to root_url
     end
   end
@@ -109,7 +109,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_meta_tags
-    @meta_title = "Ask NZ's parties your questions this election | Ask Away"
+    @meta_title = "Ask NZ's parties your questions this election | Any Questions"
     @meta_description = "Find out where the parties stand on the things you care about."
     # @meta_description = "See the political parties' responses to the things you care about."
     # @meta_description = "See what they're saying about the things that are important to you."
@@ -117,7 +117,7 @@ class ApplicationController < ActionController::Base
   end
 
   def add_note_about_the_site_being_old
-      flash[:notice] = "These questions and answers are from the 2014 General Election. To see what the Design and Democracy Project is doing this year, <a href='https://www.facebook.com/designanddemocracy' target='_blank'>follow them on Facebook</a>.".html_safe
+      
   end
 
   def redirect_to_canonical_show_path(record)

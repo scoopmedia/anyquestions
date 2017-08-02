@@ -46,7 +46,7 @@ class AnswersController < ApplicationController
   private
     def check_site_closed_xhr
       if Setting.site_closed?
-        error_message = 'Sorry, answering on Ask Away has closed.'
+        error_message = 'Sorry, answering on Any Questions has closed.'
         return render json: { message: error_message }, status: 422
       end
     end

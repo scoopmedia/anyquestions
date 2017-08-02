@@ -50,8 +50,8 @@ class QuestionsController < ApplicationController
     if show_answer_form?
       @new_answer = Answer.new
     end
-    @meta_title = "#{@question.body} | Ask Away"
-    @meta_description = "#{@question.user_name} asked NZ's parties, \"#{@question.body}\" See their answers on Ask Away..."
+    @meta_title = "#{@question.body} | Any Questions"
+    @meta_description = "#{@question.user_name} asked NZ's parties, \"#{@question.body}\" See their answers on Any Questions..."
     @question = @question.decorate
   end
 

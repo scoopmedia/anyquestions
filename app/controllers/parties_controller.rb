@@ -6,7 +6,7 @@ class PartiesController < ApplicationController
     @invitation = Invitation.new
     redirect_to_canonical_show_path(@party)
 
-    @meta_title = "#{@party.name} - Answering your questions on Ask Away"
+    @meta_title = "#{@party.name} - Answering your questions on Any Questions"
     @meta_description = "Ask the #{@party.name} questions and see their answers this New Zealand election."
     @meta_img = URI(request.url) + @party.avatar_url(size: :large)
   end
