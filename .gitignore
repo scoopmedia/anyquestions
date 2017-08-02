@@ -22,3 +22,7 @@
 
 .powenv
 .ruby-version
+
+*~
+
+\#*#
