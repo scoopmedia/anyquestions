@@ -1,29 +1,34 @@
-%p= "Kia ora #{@invitation.name}!"
+%p= link_to invitation_url(@invitation), invitation_url(@invitation)
+
+%p Hi #{@invitation.name}, welcome to Any Questions!
+
+%p Here's a few things to know before you start using the site:
 
 %p
-  = @invitation.inviter.name
-  has invited you to answer questions on behalf of the
+  Everything happens on the
+  = link_to "home page", "https://anyquestions.scoop.co.nz"
+  . Go there to see the top questions of the last few days. Click on a question to
+  answer it. You can answer any questions that your party hasn't answered yet. Just
+  bear in mind that your party can only give one answer to each question, so think
+  about whether you’re the best person to be answering.
+
+%p
+  We'll send you email reminders if there are any really popular questions relating
+  to your particular area of expertise.
+
+%p
+  You can invite more people to answer questions on behalf of the
   = @invitation.invitable.name
-  on the website Ask Away. Your party secretary has authorised any content you post to the site. Click the link below to get started:
-
-%p= link_to invitation_url(@invitation), invitation_url(@invitation), id: 'invitation-link'
-
-%p
-  %strong What is Ask Away?
-  %br
-  Ask Away is a website where Kiwis ask the parties questions during the election, and you can answer them on behalf of your party. Ask Away is part of Massey University’s Design and Democracy Project, which aims to facilitate youth engagement in the 2014 General Election.
-%p
-  %strong Which questions should you answer?
-  %br
-  You can answer any question you like. Just bear in mind that your party can only give one answer to each question, so think about whether you’re the best person from your party to be answering.
+  by visiting your party's page
+  = link_to "here", party_url(@invitation.invitable)
+  and clicking "Invite spokespeople".
 
 %p
-  We’ll email you if there are really popular questions you need to answer. Depending on how many people in your party are answering questions, you can expect to get one or two reminder emails per week.
-%p
-  If you have any questions, free to email me, meg@askaway.org.nz, or call me with any questions.
-%p
-  Warm regards,
-  %br
-  Meg Howie
-  %br
-  0274418072
+  Finally, thank you! Every answer you contribute sends a clear message to young
+  New Zealanders that you care about what they have to say. Good on you, and we
+  hope you enjoy using the site. Also, if you ever have any questions or concerns,
+  don't hesitate to email us (jan@scoop.co.nz).
+
+ 
+
+ 
