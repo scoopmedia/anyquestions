@@ -1,5 +1,5 @@
 class AnswerMailer < ActionMailer::Base
-  default from: 'Meg Howie <howiemeg@gmail.com>'
+  default from: 'Any Questions <noreply@anyquestions.scoop.co.nz>'
 
   def asker_notification(answer)
     @answer = answer

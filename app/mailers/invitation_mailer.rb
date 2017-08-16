@@ -1,9 +1,9 @@
 class InvitationMailer < ActionMailer::Base
-  default from: '"Meg Howie (Ask Away)" <meg@askaway.org.nz>'
+  default from: '"Any Questions" <noreply@anyquestions.scoop.co.nz>'
 
   def to_join_party(invitation)
     @invitation = invitation
     mail(to: invitation.email,
-         subject: "#{invitation.inviter.name} has invited you to Ask Away")
+         subject: "#{invitation.inviter.name} has invited you to Any Questions")
   end
 end
