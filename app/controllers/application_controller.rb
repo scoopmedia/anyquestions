@@ -113,7 +113,7 @@ class ApplicationController < ActionController::Base
     @meta_description = "Find out where the parties stand on the things you care about."
     # @meta_description = "See the political parties' responses to the things you care about."
     # @meta_description = "See what they're saying about the things that are important to you."
-    @meta_img = asset_url('askaway-facebook.jpg')
+    @meta_img = asset_url('anyquestions-og-generic.jpeg')
   end
 
   def add_note_about_the_site_being_old
